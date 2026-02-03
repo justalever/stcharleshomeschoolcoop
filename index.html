@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Charles Homeschool Co-Op | Homeschooling Families in Saint Charles, Missouri</title>
+  <meta name="description" content="A close-knit community of homeschooling families in Saint Charles, Missouri connecting through fun and educational events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF8F5;
+      --warm-white: #FFFDFB;
+      --sage: #7A8B6E;
+      --sage-dark: #5C6B52;
+      --forest: #3D4A38;
+      --terracotta: #C4785A;
+      --terracotta-light: #D4896A;
+      --brown: #5D4E42;
+      --brown-light: #8B7355;
+      --text: #3A3632;
+      --text-light: #6B635A;
+      --border: #E8E4DE;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans 3', -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    /* Header */
+    .header {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--forest);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 0.7rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: var(--sage-dark);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: white !important;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--terracotta-light) !important;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--sage) 0%, var(--forest) 100%);
+      color: white;
+      padding: 5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--terracotta);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--terracotta-light);
+      transform: translateY(-2px);
+    }
+
+    /* Section styles */
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--terracotta);
+      margin: 0.75rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* Mission */
+    .mission {
+      background: var(--warm-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mission-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+      color: var(--brown);
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* Rules */
+    .rules-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .rule-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .rule-card h4 {
+      color: var(--sage-dark);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rule-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* What to Expect */
+    .expect {
+      background: var(--warm-white);
+    }
+
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .expect-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .expect-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .expect-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .expect-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .expect-card h4 {
+      color: var(--forest);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .expect-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Join CTA */
+    .join {
+      background: linear-gradient(135deg, var(--forest) 0%, var(--sage-dark) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .join .section-title {
+      color: white;
+    }
+
+    .join .section-title::after {
+      background: rgba(255,255,255,0.4);
+    }
+
+    .join p {
+      max-width: 550px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+    }
+
+    .join-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--forest);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .join-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .event-details {
+      margin-top: 3rem;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+    }
+
+    .event-details h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      opacity: 0.95;
+    }
+
+    .event-details ul {
+      list-style: none;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .event-details li {
+      padding: 0.25rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .event-details li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta-light);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--terracotta);
+      font-size: 1.15rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-email:hover {
+      text-decoration: underline;
+    }
+
+    .founder-note {
+      margin-top: 1.5rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--forest);
+      color: white;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      opacity: 0.7;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: white;
+      opacity: 0.8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 1.5rem;
+    }
+
+    /* Mobile Nav */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--warm-white);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 0.5rem 0;
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 3.5rem 1.5rem;
+      }
+
+      section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+        </div>
+        <div class="logo-text">
+          Saint Charles Homeschool Co-Op
+          <span>Est. 2023 • Saint Charles, MO</span>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#mission">Mission</a>
+        <a href="#rules">Guidelines</a>
+        <a href="#expect">What to Expect</a>
+        <a href="#contact">Contact</a>
+        <a href="https://band.us/n/a3a0bfX5f7wfT" class="nav-cta" target="_blank" rel="noopener">Join Us</a>
+      </nav>
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Saint Charles Homeschool Co-Op</h1>
+      <p class="hero-subtitle">Homeschooling Families in Saint Charles, Missouri</p>
+      <p>Founded in November 2023, we're a close-knit community of active homeschooling families connecting through fun and educational events.</p>
+      <a href="https://band.us/n/a3a0bfX5f7wfT" class="hero-cta" target="_blank" rel="noopener">
+        Join Our Community
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div class="section-inner">
+      <h2 class="section-title">Our Mission</h2>
+      <p class="mission-text">We are a private group of homeschooling families with elementary students committed to co-creating opportunities for our children to learn, play, grow, and thrive through activities that nurture social skills, creativity, critical thinking, and a love for learning.</p>
+    </div>
+  </section>
+
+  <section class="rules" id="rules">
+    <div class="section-inner">
+      <h2 class="section-title">Group Guidelines</h2>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <h4>Member Participation Required</h4>
+          <p>All members are encouraged to help facilitate events. Inactive members may be removed.</p>
+        </div>
+        <div class="rule-card">
+          <h4>RSVP and Attendance Policy</h4>
+          <p>Please respond to event invitations decisively. Notify the host directly if your RSVP changes. Register only for events you plan to attend. Repeated no-shows, cancellations, or tardiness may result in loss of priority for future limited-capacity events.</p>
+        </div>
+        <div class="rule-card">
+          <h4>Invite All Members Only</h4>
+          <p>When creating events, please invite all members of Saint Charles Homeschool Co-Op, not restricted to age limits and always coed. Do not open events up to the public, invite non-members, nor cross-promote without admin permission.</p>
+        </div>
+        <div class="rule-card">
+          <h4>Hosts Cover Costs</h4>
+          <p>It is the host's responsibility to pay for materials when leading classes. Hosts may ask for donations or collaborate with other members to share costs. Do not charge an attendance fee unless hiring a third party.</p>
+        </div>
+        <div class="rule-card">
+          <h4>Be Courteous</h4>
+          <p>Arrive on time, be kind, respectful, well-mannered, and refrain from gossiping or sharing confidential information. This goes for parents and children.</p>
+        </div>
+        <div class="rule-card">
+          <h4>Focus on Homeschooling</h4>
+          <p>Please keep discussion board posts relevant to all members and focused on homeschooling. Thanks for helping maintain a useful and beneficial space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="expect" id="expect">
+    <div class="section-inner">
+      <h2 class="section-title">What to Expect</h2>
+      <div class="expect-grid">
+        <div class="expect-card">
+          <div class="expect-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
+          </div>
+          <h4>Ages 5–10</h4>
+          <p>Events are geared toward kids ages 5-10. Younger and older siblings are welcome to tag along if necessary.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Experienced Instructors</h4>
+          <p>All members contribute to hosting classes and events, sharing knowledge and passion for teaching to create engaging learning experiences.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h4>Collaborative Spaces</h4>
+          <p>We meet at library meeting rooms, residences, park pavilions, playgrounds, church facilities, gymnasiums, and hiking trails.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <h4>Diverse Classes</h4>
+          <p>From core subjects like reading, math, science, and social studies to electives such as art, music, health, and physical education.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h4>Community Events</h4>
+          <p>Regular social events to help families connect, share experiences, get to know each other, and build lasting friendships.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <h4>Field Trips</h4>
+          <p>Organized field trips and guest speakers for private presentations, providing hands-on experiences and broader perspectives.</p>
+        </div>
+      </div>
+      <div style="margin-top: 2rem; text-align: center; color: var(--text-light); font-style: italic;">
+        Plus birthday parties, sports, games, camping trips, photoshoots, graduation celebrations, group presentations, learning expos, theater performances, Bible studies, and more!
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="section-inner">
+      <h2 class="section-title">Get Involved</h2>
+      <p>Install the BAND app and join our private group to start connecting with homeschooling families in Saint Charles.</p>
+      <a href="https://band.us/n/a3a0bfX5f7wfT" class="join-cta" target="_blank" rel="noopener">
+        Join Our BAND Group
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <div class="event-details">
+        <h4>When Creating Events, Include:</h4>
+        <ul>
+          <li>Event title</li>
+          <li>Date, start and end time</li>
+          <li>Maximum capacity</li>
+          <li>Allergen information (animals, nuts, etc.)</li>
+          <li>Rules for the event</li>
+          <li>Supplies needed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">Contact</h2>
+      <a href="mailto:stcharleshomeschoolcoop@gmail.com" class="contact-email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        stcharleshomeschoolcoop@gmail.com
+      </a>
+      <p class="founder-note">Founder & Admin: Alyssa Leverenz</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Saint Charles Homeschool Co-Op</div>
+      <div class="footer-tagline">Homeschooling Families in Saint Charles, Missouri</div>
+      <div class="footer-links">
+        <a href="#mission">Mission</a>
+        <a href="#rules">Guidelines</a>
+        <a href="#expect">What to Expect</a>
+        <a href="#contact">Contact</a>
+        <a href="https://band.us/n/a3a0bfX5f7wfT" target="_blank" rel="noopener">Join on BAND</a>
+      </div>
+      <div class="footer-copy">© 2025 Saint Charles Homeschool Co-Op. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll for anchor links (fallback for older browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
