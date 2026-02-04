@@ -541,7 +541,7 @@
         padding-top: 1.5rem;
       }
 
-      /* Mobile Nav */
+      /* Tablet and below */
       @media (max-width: 768px) {
         .nav {
           display: none;
@@ -552,7 +552,7 @@
           background: var(--warm-white);
           flex-direction: column;
           padding: 1rem 1.5rem;
-          gap: 0.75rem;
+          gap: 0;
           border-bottom: 1px solid var(--border);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
@@ -562,25 +562,120 @@
         }
 
         .nav a {
-          padding: 0.5rem 0;
+          padding: 0.75rem 0;
+          font-size: 1rem;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .nav a:last-child {
+          border-bottom: none;
         }
 
         .nav-cta {
           display: block;
           width: 100%;
           text-align: center;
+          margin-top: 0.5rem;
+          padding: 0.85rem 1.25rem;
         }
 
         .mobile-menu-btn {
           display: block;
         }
 
+        .logo-text {
+          font-size: 1.15rem;
+        }
+
         .hero {
           padding: 3.5rem 1.5rem;
         }
 
+        .hero-cta {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding: 1rem;
+        }
+
         section {
           padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+          font-size: 1.65rem;
+        }
+
+        .mission-text {
+          font-size: 1.2rem;
+        }
+
+        .expect-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .join-cta {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .event-details {
+          padding: 1.25rem 1.5rem;
+        }
+
+        .contact-email {
+          font-size: 1rem;
+          word-break: break-all;
+        }
+
+        .footer-links {
+          gap: 1.25rem 1.5rem;
+        }
+      }
+
+      /* Small phones */
+      @media (max-width: 400px) {
+        .header-inner {
+          padding: 0.75rem 1rem;
+        }
+
+        .logo-text {
+          font-size: 1rem;
+        }
+
+        .logo-text span {
+          font-size: 0.6rem;
+        }
+
+        .logo-icon {
+          width: 36px;
+          height: 36px;
+        }
+
+        .logo-icon svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .hero {
+          padding: 2.5rem 1rem;
+        }
+
+        section {
+          padding: 2.5rem 1rem;
+        }
+
+        .rule-card {
+          padding: 1.25rem;
+        }
+
+        .expect-card {
+          padding: 1.25rem;
+        }
+
+        .footer {
+          padding: 2rem 1rem;
         }
       }
     </style>
@@ -833,7 +928,7 @@
         <div class="event-details">
           <h4>When Creating Events, Include:</h4>
           <ul>
-            <li>Event title</li>
+            <li>Event title and cover photo</li>
             <li>Date, start and end time</li>
             <li>Maximum capacity</li>
             <li>Allergen information (animals, nuts, etc.)</li>
@@ -894,6 +989,13 @@
         link.addEventListener('click', () => {
           nav.classList.remove('active');
         });
+      });
+
+      // Close mobile menu when tapping outside
+      document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+          nav.classList.remove('active');
+        }
       });
 
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
