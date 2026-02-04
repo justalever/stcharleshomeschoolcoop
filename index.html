@@ -564,11 +564,6 @@
         .nav a {
           padding: 0.75rem 0;
           font-size: 1rem;
-          border-bottom: 1px solid var(--border);
-        }
-
-        .nav a:last-child {
-          border-bottom: none;
         }
 
         .nav-cta {
@@ -583,8 +578,17 @@
           display: block;
         }
 
+        .logo {
+          min-width: 0;
+        }
+
         .logo-text {
           font-size: 1.15rem;
+          min-width: 0;
+        }
+
+        .logo-text span {
+          display: none;
         }
 
         .hero {
@@ -625,8 +629,11 @@
         }
 
         .contact-email {
-          font-size: 1rem;
-          word-break: break-all;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.25rem;
+          font-size: 0.9rem;
         }
 
         .footer-links {
@@ -641,11 +648,7 @@
         }
 
         .logo-text {
-          font-size: 1rem;
-        }
-
-        .logo-text span {
-          font-size: 0.6rem;
+          font-size: 0.95rem;
         }
 
         .logo-icon {
@@ -692,8 +695,8 @@
             </svg>
           </div>
           <div class="logo-text">
-            Saint Charles Homeschool Co-Op
-            <span>Est. 2023 • Saint Charles, MO</span>
+            St. Charles Homeschool Co-Op
+            <span>Est. 2023 • St. Charles, MO</span>
           </div>
         </a>
         <nav class="nav" id="nav">
@@ -724,8 +727,8 @@
 
     <section class="hero">
       <div class="hero-content">
-        <h1>Saint Charles Homeschool Co-Op</h1>
-        <p class="hero-subtitle">Homeschooling Families in Saint Charles, Missouri</p>
+        <h1>St. Charles Homeschool Co-Op</h1>
+        <p class="hero-subtitle">Homeschooling Families in St. Charles, Missouri</p>
         <p>
           Founded in November 2023, we're a close-knit community of active homeschooling families
           connecting through fun and educational events.
@@ -780,7 +783,7 @@
           <div class="rule-card">
             <h4>Invite All Members Only</h4>
             <p>
-              When creating events, please invite all members of Saint Charles Homeschool Co-Op, not
+              When creating events, please invite all members of St. Charles Homeschool Co-Op, not
               restricted to age limits and always coed. Do not open events up to the public, invite
               non-members, nor cross-promote without admin permission.
             </p>
@@ -910,7 +913,7 @@
         <h2 class="section-title">Get Involved</h2>
         <p>
           Install the BAND app and join our private group to start connecting with homeschooling
-          families in Saint Charles.
+          families in St. Charles.
         </p>
         <a href="https://band.us/n/a3a0bfX5f7wfT" class="join-cta" target="_blank" rel="noopener">
           Join Our BAND Group
@@ -962,8 +965,8 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-logo">Saint Charles Homeschool Co-Op</div>
-        <div class="footer-tagline">Homeschooling Families in Saint Charles, Missouri</div>
+        <div class="footer-logo">St. Charles Homeschool Co-Op</div>
+        <div class="footer-tagline">Homeschooling Families in St. Charles, Missouri</div>
         <div class="footer-links">
           <a href="#mission">Mission</a>
           <a href="#rules">Guidelines</a>
@@ -971,7 +974,7 @@
           <a href="#contact">Contact</a>
           <a href="https://band.us/n/a3a0bfX5f7wfT" target="_blank" rel="noopener">Join on BAND</a>
         </div>
-        <div class="footer-copy">© 2025 Saint Charles Homeschool Co-Op. All rights reserved.</div>
+        <div class="footer-copy">© 2025 St. Charles Homeschool Co-Op. All rights reserved.</div>
       </div>
     </footer>
 
